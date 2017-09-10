@@ -138,3 +138,28 @@ class q14Form(forms.Form):
 		(6, 'Plain'))
 
 	q14 = forms.ChoiceField(choices=CHOICES, label = '', widget=forms.Select(attrs = {'class':'form-control'}))
+
+class qcountryForm(forms.Form):
+	CHOICES = ((0,'Brazil Rio de Janeiro'),
+		(1,'China Beijing'),
+		(2,'China Macau'),
+		(3, 'Finland Helsinki'),
+		(4, 'France Paris'),
+		(5, 'Germany Munich'),
+		(6, 'India New Delhi'),
+		(7, 'Italy Rome'),
+		(8, 'Italy Sicily'),
+		(9, 'Italy Venice'),
+		(10, 'Japan Tokyo'),
+		(11, 'Mexico Riviera Maya'),
+		(12, 'Portugal Algarve'),
+		(13, 'Portugal Lisbon'),
+		(14, 'Russia St. Petersburg'),
+		(15, 'Spain Barcelona'),
+		(16, 'Spain Madrid'),
+		(17, 'USA Las Vegas'),
+		(18, 'USA Los Angeles'),
+		(19, 'USA New York City'),
+		(20, 'Vietname Hanoi'))
+
+	qcountry = forms.ChoiceField(choices=CHOICES, label = '', widget=forms.Select(attrs = {'class':'form-control'}))
