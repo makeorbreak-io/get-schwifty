@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     
@@ -21,10 +22,10 @@
 
     <!-- Custom styles for this template -->
     <link href="/static/css/grayscale.min.css" rel="stylesheet">
-    <!--<style>
+    <style>
          body {width:100%; height:100%; overflow:hidden; margin:0; }
-         html {width:100%; height:100%; overflow:hidden; }
-    </style>-->
+         /*html {width:100%; height:100%; overflow:hidden; }*/
+    </style>
     <style>
     input[type=submit] {
         background-color: #000;
@@ -61,113 +62,132 @@
     </header>
     
     
-	<!--<div class="jumbotron">
-		<div class="text-center">
-			<h1 class="display-3">TravelBug</h1>
-			<p class="lead" class="text-center">Do you have a constant need for travelling but the world it's such a big place that you can't decide where to go?</p>
-			<hr class="my-4">
-			<p>Try me out! I am a machine learning algorithm that can lead you in the right way!</p>
-		</div>
-	</div>-->
+    <!--<div class="jumbotron">
+        <div class="text-center">
+            <h1 class="display-3">TravelBug</h1>
+            <p class="lead" class="text-center">Do you have a constant need for travelling but the world it's such a big place that you can't decide where to go?</p>
+            <hr class="my-4">
+            <p>Try me out! I am a machine learning algorithm that can lead you in the right way!</p>
+        </div>
+    </div>-->
     
-	<div id="about" class= "container">
-		<form method='post'>
+    <div id="about" class= "container">
+        <form method='post'>
             <div id="about2" style="width: 100%; height: 100vh;" >
-			{% csrf_token %}
-			<p>To which culture would you like to go?</p>
-			{{ form.as_p }}
-			<p>For how long are you planning to stay?</p>
-			{{ form2.as_p }}
+            {% csrf_token %}
+            <p>To which culture would you like to go?</p>
+            {{ form.as_p }}
+            <p>For how long are you planning to stay?</p>
+            {{ form2.as_p }}
             
-			<p>How would you like to get there?</p>
-			{{ form3.as_p }}
-			<p>Too which regime would you like to go?</p>
-			{{ form4.as_p }}
+            <p>How would you like to get there?</p>
+            {{ form3.as_p }}
+            <p>Too which regime would you like to go?</p>
+            {{ form4.as_p }}
             <a href="#about3" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
-            </a>    
+            </a>   
+            <a href="#page-top" class="btn btn-circle js-scroll-trigger" style="float:right;">
+                <i class="fa fa-angle-double-up animated"></i>
+            </a>   
             </div>
             <br><br>
             <div id="about3" style="width: 100%; height: 100vh;">
-			<p>Would you like to visit any religion in particular?</p>
-			{{ form5.as_p }}
-			
+            <p>Would you like to visit any religion in particular?</p>
+            {{ form5.as_p }}
+            
             <p>Which of the following do you value the most?</p>
-			{{ form7.as_p }}
+            {{ form7.as_p }}
             <a href="#about4" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
             </a>    
+            <a href="#about2" class="btn btn-circle js-scroll-trigger" style="float:right;">
+                <i class="fa fa-angle-double-up animated"></i>
+            </a> 
             </div>
             <br><br>
             <div id="about4" style="width: 100%; height: 100vh;">
-			<p>Which activities would you like to do?</p>
-			{{ form6.as_p }}
+            <p>Which activities would you like to do?</p>
+            {{ form6.as_p }}
             <a href="#about5" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
-            </a>    
+            </a> 
+            <a href="#about3" class="btn btn-circle js-scroll-trigger" style="float:right;">
+                <i class="fa fa-angle-double-up animated"></i>
+            </a> 
             </div>
             <br><br>
             <div id="about5" style="width: 100%; height: 100vh;">
-			<p>How would you like to be accomodated?</p>
-			{{ form8.as_p }}
-			<p>What about populational density?</p>
-			{{ form9.as_p }}
+            <p>How would you like to be accomodated?</p>
+            {{ form8.as_p }}
+            <p>What about populational density?</p>
+            {{ form9.as_p }}
+            <p>Which is your food preference?</p>
+            {{ form11.as_p }}
             <a href="#about6" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
+            </a>
+            <a href="#about4" class="btn btn-circle js-scroll-trigger" style="float:right;">
+                <i class="fa fa-angle-double-up animated"></i>
             </a>    
             </div>
-            <br><br>
-            <div id="about6" style="width: 100%; height: 100vh;">
-			<p>Which is your language preference of your destinity?</p>
-			{{ form10.as_p }}
+            <div id="about6" >
+            <p>Which is your language preference of your destinity?</p>
+            {{ form10.as_p }}
             <a href="#about7" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
-            </a>    
+            </a>
+            <a href="#about5" class="btn btn-circle js-scroll-trigger" style="float:right;">
+                <i class="fa fa-angle-double-up animated"></i>
+            </a> 
             </div>
             <br><br>
-            <div id="about7"></div>
+            <div id="about7" style="width: 100%; height: 100vh;">
             <br><br>
-			<p>Which is your food preference?</p>
-			{{ form11.as_p }}
-			<p>How much are you available to pay for a BigMac Menu (€)?</p>
-			{{ form12.as_p }}
-			<p>How would you like to move in your destiny?</p>
-			{{ form13.as_p }}
-			<p>In which outdoors would you like to be?</p>
-			{{ form14.as_p }}
-			<input type='submit' value='next'>
-		</form>
-		<!--<p>{{ q1}}</p>
-		<p>{{ q2}}</p>
-		<p>{{ q3}}</p>
-		<p>{{ q4}}</p>
-		<p>{{ q5}}</p>
-		<p>{{ q6}}</p>
-		<p>{{ q7}}</p>
-		<p>{{ q8}}</p>
-		<p>{{ q9}}</p>
-		<p>{{ q10}}</p>
-		<p>{{ q11}}</p>
-		<p>{{ q12}}</p>
-		<p>{{ q13}}</p>
-		<p>{{ q14}}</p>
-		<p>{{ destino}}</p>-->
+            
+            <p>How much are you available to pay for a BigMac Menu (€)?</p>
+            {{ form12.as_p }}
+            <p>How would you like to move in your destiny?</p>
+            {{ form13.as_p }}
+            <p>In which outdoors would you like to be?</p>
+            {{ form14.as_p }}
+            <input type='submit' value='next'>
+            <a href="#page-top" class="btn btn-circle js-scroll-trigger" style="float:right;">
+                <i class="fa fa-angle-double-up animated"></i>
+            </a>
+            </div>
+        </form>
+        <!--<p>{{ q1}}</p>
+        <p>{{ q2}}</p>
+        <p>{{ q3}}</p>
+        <p>{{ q4}}</p>
+        <p>{{ q5}}</p>
+        <p>{{ q6}}</p>
+        <p>{{ q7}}</p>
+        <p>{{ q8}}</p>
+        <p>{{ q9}}</p>
+        <p>{{ q10}}</p>
+        <p>{{ q11}}</p>
+        <p>{{ q12}}</p>
+        <p>{{ q13}}</p>
+        <p>{{ q14}}</p>
+        <p>{{ destino}}</p>-->
 
-		<div id="map" style="width: 100%; height: 550px; {{mapDisplay}}"></div>
-		<script>  
-		var city = {{cityArray|safe}};
-		console.log(city);
+        <div id="map" style="width: 100%; height: 550px; {{mapDisplay}}"></div>
+        <script>  
+        var city = {{cityArray|safe}};
+        console.log(city);
 
-		var locations = [];
-		var i;
-		for (i =0; i< city.length; i++){
-			locations.push(city[i]);
-		}
-		</script>
-		{% load static %}
-		<script src="{% static "home/mapa.js" %}" alt="mapa"/></script> 
+        var locations = [];
+        var i;
+        for (i =0; i< city.length; i++){
+            locations.push(city[i]);
+        }
+        </script>
+        {% load static %}
+        <script src="{% static "home/mapa.js" %}" alt="mapa"/></script> 
 
-	</div>
+    </div>
     <script src="/static/vendor/jquery/jquery.min.js"></script>
     <script src="/static/vendor/popper/popper.min.js"></script>
     <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
