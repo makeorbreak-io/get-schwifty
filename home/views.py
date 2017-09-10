@@ -15,6 +15,8 @@ geolocator = Nominatim()
 
 class HomeView(TemplateView):
 	template_name = 'home/home.html'
+	template_name2 = 'home/mapa.html'
+	cityArray=[]
 
 	def get(self, request):
 
@@ -152,7 +154,7 @@ class HomeView(TemplateView):
     scrollTop: $('#map').offset().top}, 1000);"""
 
 		args = {'form':form, 'form2':form2, 'form3':form3,'form4':form4, 'form5':form5,'form6':form6,'form7':form7,'form8':form8,'form9':form9,'form10':form10,'form11':form11,'form12':form12,'form13':form13,'form14':form14,'q1':q1, 'q2':q2, 'q3':q3, 'q4':q4, 'q5':q5, 'q6':q6, 'q7':q7, 'q8':q8, 'q9':q9, 'q10':q10, 'q11':q11, 'q12':q12, 'q13':q13, 'q14':q14, 'cityArray':cityArray, 'destino':destino, 'mapDisplay':mapDisplay}
-		return render(request, self.template_name, args)
+		return render(request, self.template_name2, args)
 
 
 class Destino():
@@ -161,3 +163,26 @@ class Destino():
 		self.name = name
 		self.lat  = lat
 		self.lng  = lng
+
+class Train(TemplateView):
+	"""docstring for ClassName"""
+	template_name3='home/train.html'
+
+	def get(self, request):
+		
+		form = q1Form()
+		form2 = q2Form()
+		form3 = q3Form()
+		form4 = q4Form()
+		form5 = q5Form()
+		form6 = q6Form()
+		form7 = q7Form()
+		form8 = q8Form()
+		form9 = q9Form()
+		form10 = q10Form()
+		form11 = q11Form()
+		form12 = q12Form()
+		form13 = q13Form()
+		form14 = q14Form()
+		cityArray=[]
+		return render(request, self.template_name3, {'form':form, 'form2':form2, 'form3':form3, 'form4':form4, 'form5':form5, 'form6':form6,'form7':form7,'form8':form8,'form9':form9,'form10':form10,'form11':form11,'form12':form12,'form13':form13,'form14':form14})
